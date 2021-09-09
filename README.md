@@ -158,6 +158,37 @@ if request.method == 'POST':
 - `"game-over.html"` is the name of the html file being referenced to be displayed in the browser.
 - `message=result` displays the specific message text for the outcome produced.
 
+##### Referencing The Design Templates
+
+To achieve the look and feel, html and CSS were used to stlye the homepage and the game-over page.
+You can design it however you wish within reason of the functionality of the app you are creating, but please note:
+1. In-order for flask to see your html templates, they must be placed in a folder/directory title *templates* in your project folder/directory
+2. In-order for flask to see your CSS styles, JavaScript code and other scripts, they must be placed in a folder/directory title *static* in your project folder/directory
+    -When linking to the css in your html file, please ensure that it looks something link this: `<link href="static/css/nameoffile.css" rel="stylesheet" type="text/css">`. A reference to thhe Static folder/directory must be present.
+    
+After you have style the page to your liking, your must create the elements that would perform the function of your web app. This depends on the type of app being created, but in this case, we need:
+
+On the Homepage:
+1. A form input field
+2. A form submit button
+3. A paragraph element to display information
+
+```html
+ <form method = 'POST' id="email-form" name="email-form" data-name="Email Form" class="form">
+          <input name = "guess" type="text" class="field w-input" maxlength="256" data-name="guess" placeholder="" id="guess"/>
+          <input type="submit" value="Guess" data-wait="Please wait..." class="button w-button"/>
+        </form>
+
+      <p class="note-para">
+          {{ message }}
+      </p>
+```
+
+On the Game-over page:
+1. A paragraph element to display information
+2. Button to reload the game
+
+
 
 ## Authors
 
