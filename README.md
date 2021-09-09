@@ -1,6 +1,6 @@
 # Guessing-Game-VS-Code
 
-A simple Number Guessing Game web application which provides the following functionality:  
+A simple Number Guessing Game web application which provides that will be deployed to AWS Elastic Beanstalk using jenkins. It will have the following functionality:  
 - The Computer randomly selects a number between 1 and 10  
 - The player can input a number between 1 and 10 as a guess  
 - The game allows for 3 attempts before game over 
@@ -211,6 +211,11 @@ On the Game-over page:
       </p>
 ```
 
+## Issues I faced when deploying it?
+
+**Issue:** When attempting to deploy the app to the vritual cloud environment on the AWS Elastic Beanstalk, the venv would degrade and the deployment would fail.
+**Cause:** The program I used to build this app was Pycharm. Pycharm automatically creates a virtual environment for each project and this inturn has many Pycharm link files attached to it. When I uploaded those files to my Github repo, and tried to deploy them through Jenkins, the Pycharm made venv and extra files clashed the AWS Elastic Beanstalk venv, causing it to fail.
+**Solution** I rebuilt the app using VS Code. This new set of file had no exccess program specific files and was able to be successfully deployed.
 
 ## Authors
 
