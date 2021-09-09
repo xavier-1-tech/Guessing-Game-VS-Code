@@ -8,6 +8,10 @@ A simple Number Guessing Game web application which provides the following funct
 
 The project makes use of Python3, Flask, SQLite, HTML5, CSS, JavaScript Bootstrap and JQuery.
 
+## Why a guessing game?
+
+I felt that doing an object oriented guessing game app and combining it with the flask microframework was the best way to keep what I had learned from python fresh in my mind through practice.
+
 ## Getting Started
 
 git clone https://github.com/xavier-1-tech/Guessing-Game.git && cd guess_app
