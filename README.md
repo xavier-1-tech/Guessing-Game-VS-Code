@@ -173,12 +173,25 @@ On the Homepage:
 2. A form submit button
 3. A paragraph element to display information
 
+When creating the form element and the subsequent input field and button, ensure the follow are done:
+- Add the `method = 'POST'` inside the form opening tag. e.g. `<form method = 'POST'>`
+- Ensure that the name of the input field is the same as the input string designated inside the `user_guess` variable in the code. In this case that would be `guess`. It should look like this `<input name = "guess" type="text"/>` to reference this `user_guess = int(form["guess"])`
+- Ensure that the value of the form submit button also references the input string designated inside the `user_guess` variable in the code, which would be `guess`. Implementation below:
+
 ```html
  <form method = 'POST' id="email-form" name="email-form" data-name="Email Form" class="form">
           <input name = "guess" type="text" class="field w-input" maxlength="256" data-name="guess" placeholder="" id="guess"/>
-          <input type="submit" value="Guess" data-wait="Please wait..." class="button w-button"/>
+          <input type="submit" value="guess" data-wait="Please wait..." class="button w-button"/>
         </form>
+```
 
+The paragraph element will be autofilled by various message strings dependant on the situation from the code. This done by placeing the `{{ message }}` between opening and closing paragraph tags `<p></p>`.
+`{{ }}` allow for value substitution of variable inside of it during template rendering. In our case, `message` is the variable being substituted. The follow messages can be displayed
+- Too High
+- Too Low
+- Well done. You got it right!
+
+```html
       <p class="note-para">
           {{ message }}
       </p>
@@ -186,8 +199,13 @@ On the Homepage:
 
 On the Game-over page:
 1. A paragraph element to display information
-2. Button to reload the game
+2. Button to reload the game (work in progress)
 
+```html
+ <p class="game-over">
+        {{ message }}
+      </p>
+```
 
 
 ## Authors
